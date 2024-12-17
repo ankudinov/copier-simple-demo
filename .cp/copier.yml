@@ -13,4 +13,4 @@ _exclude:
 avd_inventory:
   type: str
   help: AVD directory name
-  default: "A New Lab"
+  default: "avd_inventory"

@@ -101,7 +101,7 @@ if __name__ == "__main__":
         help='Debug the templating tool. This will save all files in a dedicated directory.'
     )
     parser.add_argument(
-        '-s', '--silent', action='store_true', default=True,
+        '-v', '--verbose', action='store_false', default=True,
         help='Do not ask any questions.'
     )
     args = parser.parse_args()
@@ -143,7 +143,7 @@ if __name__ == "__main__":
 
     # run copier
     cp = copier
-    if args.silent:
+    if args.verbose:
         extra_vars.update({'avd_inventory': 'test'})
     cpWorker = cp.Worker(src_path=temp_template_dir, dst_path=copier_dst_directory, data=extra_vars, unsafe='True', overwrite=True)
     cpWorker.run_copy()
