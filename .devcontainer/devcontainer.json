@@ -29,8 +29,6 @@
     },
     "onCreateCommand": "chmod +x /cvaas-cvaas-and-avd-demo--evpn-mlag/addAliases.sh; /cvaas-cvaas-and-avd-demo--evpn-mlag/addAliases.sh",
     // "postCreateCommand": "postCreate.sh; make start",
-    "postCreateCommand": "pip install -r /workspaces/verona-poc/.devcontainer/requirements.txt; sudo cp cp.py /bin/copy; sudo chmod +x /bin/copy",
-    "workspaceMount": "source=${localWorkspaceFolder}/labs/${containerWorkspaceFolder},target=/${containerWorkspaceFolder},type=bind",
-    "workspaceFolder": "/cvaas-cvaas-and-avd-demo--evpn-mlag",
+    "postCreateCommand": "pip install -r /workspaces/copier-simple-demo/.devcontainer/requirements.txt; sudo cp cp.py /bin/copy; sudo chmod +x /bin/copy",
     "containerUser": "avd"
 }
