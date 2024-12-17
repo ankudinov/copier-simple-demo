@@ -33,6 +33,15 @@ This lab has following devices:
 
 ## How To Use The Lab
 
+To run the lab on ARM MacBook you must define one of the following env variables:
+
+- `CEOS_LAB_INTERNAL_PULL` - to pull the image from internal registry (Arista employees only)
+- `CEOS_LAB_INTERNAL_WGET` - to download the lab with wget (Arista employees only)
+
+You can also run the lab using Github Codespaces or x86 machine after specifying `ARTOKEN` secret.
+To run the lab on your own x86 host - clone it and open with VSCode in a devcontainer. VSCode `Remote Development` extension pack must be installed before that.
+To run the lab on Codespaces use [following link](https://codespaces.new/ankudinov/copier-simple-demo/tree/master?quickstart=1&devcontainer_path=.devcontainer%2Fdevcontainer.json)
+
 - Use `make start` to start the lab.
 - `make build` to build configs with AVD. You can skip this step if no changes were made, as configs were pre-generated.
 - `make deploy` to send configs to the cEOS-lab switches via eAPI.
