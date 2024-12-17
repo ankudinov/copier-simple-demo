@@ -1,0 +1,18 @@
+---
+_jinja_extensions:
+  - copier_templates_extensions.TemplateExtensionLoader
+  - extensions/_in.py:InExtension
+
+_exclude:
+  - extra-vars
+  - extensions
+  - _macros
+  - include
+  - copier.yml
+
+lab_name:
+  type: str
+  help: |
+    lab_name:
+        The name of the lab. Can be any string without line breaks.
+  default: "A New Lab"
