@@ -30,3 +30,12 @@ This lab has following devices:
 | h02 | host | cEOS-lab, 4.32.3M | 10.0.3.2 | arista | arista |
 
 > To access any device, use `ssh <username>@<hostname>` or simply type `<hostname>` to use the SSH alias.
+
+## How To Use The Lab
+
+- Use `make start` to start the lab.
+- `make build` to build configs with AVD. You can skip this step if no changes were made, as configs were pre-generated.
+- `make deploy` to send configs to the cEOS-lab switches via eAPI.
+- SSH to h01 using `h01` alias and type `test` alias. All ping tests must pass.
+- Use ANTA to verify the network state by typing `make test`.
+- You can stop the lab any time with `make stop` or print the list of running containers with `make inspect`.
