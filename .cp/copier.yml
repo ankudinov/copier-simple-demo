@@ -10,9 +10,7 @@ _exclude:
   - include
   - copier.yml
 
-lab_name:
+avd_inventory:
   type: str
-  help: |
-    lab_name:
-        The name of the lab. Can be any string without line breaks.
+  help: AVD directory name
   default: "A New Lab"

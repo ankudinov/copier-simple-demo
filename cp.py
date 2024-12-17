@@ -100,6 +100,10 @@ if __name__ == "__main__":
         '-d', '--debug', action='store_true', default=False,
         help='Debug the templating tool. This will save all files in a dedicated directory.'
     )
+    parser.add_argument(
+        '-s', '--silent', action='store_true', default=True,
+        help='Do not ask any questions.'
+    )
     args = parser.parse_args()
 
     if args.debug:
@@ -139,7 +143,9 @@ if __name__ == "__main__":
 
     # run copier
     cp = copier
-    cpWorker = cp.Worker(src_path=temp_template_dir, dst_path=copier_dst_directory, data=extra_vars, unsafe='True')
+    if args.silent:
+        extra_vars.update({'avd_inventory': 'test'})
+    cpWorker = cp.Worker(src_path=temp_template_dir, dst_path=copier_dst_directory, data=extra_vars, unsafe='True', overwrite=True)
     cpWorker.run_copy()
 
     shutil.rmtree(temp_template_dir)
