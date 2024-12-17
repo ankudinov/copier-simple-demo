@@ -3,20 +3,13 @@
     // containerEnv set the variables applied to entire container
     "containerEnv": {
         "ARISTA_TOKEN": "${localEnv:ARTOKEN}",
+        "CEOS_LAB_INTERNAL_PULL": "${localEnv:CEOS_LAB_INTERNAL_PULL}",
+        "CEOS_LAB_INTERNAL_WGET": "${localEnv:CEOS_LAB_INTERNAL_WGET}",
         "CEOS_LAB_VERSION": "4.32.3M",
-        "CV_API_TOKEN": "${localEnv:CV_API_TOKEN}",
         "CONTAINERWSF": "${containerWorkspaceFolder}",
         "GITHUB_REPOSITORY": "aristanetworks/aclabs"
     },
     "secrets": {
-        "CV_API_TOKEN": {
-            "description": "CVaaS service account token."
-            // "documentationUrl": "https://example.com/link/to/info"
-        },
-        "CVURL": {
-            "description": "(Optional) URL to be used to access CVaaS. Default is `cv-staging.corp.arista.io`"
-            // "documentationUrl": "https://example.com/link/to/info"
-        },
         "ARTOKEN": {
             "description": "token to auto-download EOS images from arista.com."
             // "documentationUrl": "https://example.com/link/to/info"
@@ -27,8 +20,8 @@
         "memory": "32gb",
         "storage": "64gb"
     },
-    "onCreateCommand": "chmod +x /cvaas-cvaas-and-avd-demo--evpn-mlag/addAliases.sh; /cvaas-cvaas-and-avd-demo--evpn-mlag/addAliases.sh",
+    "onCreateCommand": "chmod +x /workspaces/copier-simple-demo/addAliases.sh; /workspaces/copier-simple-demo/addAliases.sh",
     // "postCreateCommand": "postCreate.sh; make start",
-    "postCreateCommand": "pip install -r /workspaces/copier-simple-demo/.devcontainer/requirements.txt; sudo cp cp.py /bin/copy; sudo chmod +x /bin/copy",
+    "postCreateCommand": "/workspaces/copier-simple-demo/postCreate.sh",
     "containerUser": "avd"
 }
