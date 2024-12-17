@@ -144,7 +144,7 @@ if __name__ == "__main__":
     # run copier
     cp = copier
     if args.verbose:
-        extra_vars.update({'avd_inventory': 'test'})
+        extra_vars.update({'avd_inventory': 'avd_inventory'})
     cpWorker = cp.Worker(src_path=temp_template_dir, dst_path=copier_dst_directory, data=extra_vars, unsafe='True', overwrite=True)
     cpWorker.run_copy()
 
