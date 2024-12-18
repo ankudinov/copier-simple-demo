@@ -1,0 +1,22 @@
+---
+tenants:
+{%- for tenant in tenants %}
+- mac_vrf_vni_base: {{ tenant['Mac VRF Base VNI'] }}
+  name: {{ tenant['Tenant Name'] }}
+  vrfs:
+{%- for vrf in tenant['Tenant Name'] | _vrf %}
+  - name: {{ vrf['VRF Name'] }}
+    vrf_id: {{ vrf['VRF ID'] }}
+    vtep_diagnostic:
+      loopback: {{ vrf['Diagnostic Loopback Number'] }}
+      loopback_ip_range: {{ vrf['Diagnostic Loopback Range'] }}
+    svis:
+{%- for vlan in vrf['VRF Name'] | _vlan %}
+    - enabled: true
+      id: {{ vlan['VLAN number'] }}
+      name: {{ vlan['VLAN name'] }}
+      ip_address_virtual: {{ vlan['IP address virtual'] }}
+      tags: {{ vlan['Tags'] }}
+{%- endfor %}
+{%- endfor %}
+{%- endfor %}

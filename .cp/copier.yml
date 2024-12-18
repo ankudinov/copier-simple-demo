@@ -2,6 +2,8 @@
 _jinja_extensions:
   - copier_templates_extensions.TemplateExtensionLoader
   - extensions/_in.py:InExtension
+  - extensions/_vrf.py:vrfExtension
+  - extensions/_vlan.py:vlanExtension
 
 _exclude:
   - extra-vars

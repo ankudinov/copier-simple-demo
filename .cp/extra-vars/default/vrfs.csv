@@ -1,0 +1,2 @@
+"VRF Name","Tenant Name","VRF ID","Diagnostic Loopback Number","Diagnostic Loopback Range"
+VRF1,TENANT_A,1,101,100.64.101.0/24
