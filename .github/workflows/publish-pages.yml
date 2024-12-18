@@ -3,7 +3,7 @@ name: publish-pages
 concurrency: publish-pages
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths:
     - docs/**
     - avd_inventory/documentation/**
@@ -11,7 +11,7 @@ on:
     - mkdocs.yml
     - .github/workflows/publish-pages.yml
   workflow_dispatch:
-    branches: [main]
+    branches: [master]
 permissions:
   contents: write
   pages: write
