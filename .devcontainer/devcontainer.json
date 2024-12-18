@@ -5,7 +5,7 @@
         "ARISTA_TOKEN": "${localEnv:ARTOKEN}",
         "CEOS_LAB_INTERNAL_PULL": "${localEnv:CEOS_LAB_INTERNAL_PULL}",
         "CEOS_LAB_INTERNAL_WGET": "${localEnv:CEOS_LAB_INTERNAL_WGET}",
-        "CEOS_LAB_VERSION": "4.32.3M",
+        "CEOS_LAB_VERSION": "4.33.1F",
         "CONTAINERWSF": "${containerWorkspaceFolder}",
         "GITHUB_REPOSITORY": "aristanetworks/aclabs"
     },
