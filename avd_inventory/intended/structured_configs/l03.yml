@@ -91,15 +91,15 @@ router_bgp:
     - ip_address: 100.65.2.5
       peer_group: MLAG-IPv4-UNDERLAY-PEER
       description: l04_Vlan3000
-  vlan_aware_bundles:
-  - name: VRF1
-    rd: 100.65.255.5:1
+  vlans:
+  - id: 200
+    tenant: TENANT_A
+    rd: 100.65.255.5:10200
     route_targets:
       both:
-      - '1:1'
+      - 10200:10200
     redistribute_routes:
     - learned
-    vlan: '200'
 static_routes:
 - vrf: MGMT
   destination_address_prefix: 0.0.0.0/0

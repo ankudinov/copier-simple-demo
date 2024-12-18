@@ -161,7 +161,7 @@ vlans:
   trunk_groups:
   - MLAG
 - id: 100
-  name: VLAN101
+  name: VLAN100
   tenant: TENANT_A
 - id: 3000
   name: MLAG_L3_VRF_VRF1
@@ -185,7 +185,7 @@ vlan_interfaces:
   tags:
   - l01
   - l02
-  description: VLAN101
+  description: VLAN100
   shutdown: false
   ip_address_virtual: 10.100.100.1/24
   vrf: VRF1
