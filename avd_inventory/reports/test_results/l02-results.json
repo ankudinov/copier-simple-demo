@@ -484,7 +484,7 @@
     "description": "Verifies if NTP is synchronised.",
     "result": "failure",
     "messages": [
-      "The device is not synchronized with the configured NTP server(s): 'NTP starting...'"
+      "The device is not synchronized with the configured NTP server(s): 'unsynchronised'"
     ]
   },
   {

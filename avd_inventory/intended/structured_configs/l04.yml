@@ -100,6 +100,14 @@ router_bgp:
       - 10200:10200
     redistribute_routes:
     - learned
+  - id: 250
+    tenant: TENANT_A
+    rd: 100.65.255.6:10250
+    route_targets:
+      both:
+      - 10250:10250
+    redistribute_routes:
+    - learned
 static_routes:
 - vrf: MGMT
   destination_address_prefix: 0.0.0.0/0
@@ -163,6 +171,9 @@ vlans:
 - id: 200
   name: VLAN200
   tenant: TENANT_A
+- id: 250
+  name: VLAN250
+  tenant: TENANT_A
 - id: 3000
   name: MLAG_L3_VRF_VRF1
   trunk_groups:
@@ -188,6 +199,15 @@ vlan_interfaces:
   description: VLAN200
   shutdown: false
   ip_address_virtual: 10.200.200.1/24
+  vrf: VRF1
+- name: Vlan250
+  tenant: TENANT_A
+  tags:
+  - l03
+  - l04
+  description: VLAN250
+  shutdown: false
+  ip_address_virtual: 10.250.250.1/24
   vrf: VRF1
 - name: Vlan3000
   tenant: TENANT_A
@@ -335,6 +355,8 @@ vxlan_interface:
       vlans:
       - id: 200
         vni: 10200
+      - id: 250
+        vni: 10250
       vrfs:
       - name: VRF1
         vni: 1

@@ -307,10 +307,7 @@
       "interfaces"
     ],
     "description": "Verifies the status of the provided interfaces.",
-    "result": "failure",
-    "messages": [
-      "The following interface(s) are not in the expected state: ['Port-Channel20 is down/lowerLayerDown']"
-    ],
+    "result": "success",
     "custom_field": "Interface Port-Channel20 - SERVER_h02 = 'up'"
   },
   {
@@ -332,6 +329,16 @@
     "description": "Verifies the status of the provided interfaces.",
     "result": "success",
     "custom_field": "Interface Vlan200 - VLAN200 = 'up'"
+  },
+  {
+    "name": "l03",
+    "test": "VerifyInterfacesStatus",
+    "categories": [
+      "interfaces"
+    ],
+    "description": "Verifies the status of the provided interfaces.",
+    "result": "success",
+    "custom_field": "Interface Vlan250 - VLAN250 = 'up'"
   },
   {
     "name": "l03",
@@ -484,7 +491,7 @@
     "description": "Verifies if NTP is synchronised.",
     "result": "failure",
     "messages": [
-      "The device is not synchronized with the configured NTP server(s): 'NTP starting...'"
+      "The device is not synchronized with the configured NTP server(s): 'unsynchronised'"
     ]
   },
   {
