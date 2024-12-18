@@ -1,0 +1,33 @@
+@keyframes heartbeat {
+    0%, 40%, 80%, 100% {
+        transform: scale(1);
+    }
+    20%, 60% {
+        transform: scale(1.15);
+    }
+    }
+    .heartbeat {
+    animation: heartbeat 1000ms infinite;
+    }
+    /* Maximum space for text block */
+    .md-grid {
+        max-width: 100%; /* or 100%, if you want to stretch to full-width */
+    }
+    .opacity05 {
+        opacity: 0.5;
+    }
+    .opacity06 {
+        opacity: 0.6;
+    }
+    .opacity07 {
+        opacity: 0.7;
+    }
+    .opacity08 {
+        opacity: 0.8;
+    }
+    .opacity09 {
+        opacity: 0.9;
+    }
+    .contrast90 {
+        filter: contrast(90%);
+    }

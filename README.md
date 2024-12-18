@@ -1,4 +1,4 @@
-# CVaaS and AVD Demo, EVPN MLAG
+# Copier Simple Demo
 
 This lab is tested for:  
 
