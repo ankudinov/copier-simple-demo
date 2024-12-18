@@ -32,6 +32,7 @@ jobs:
       - name: Move required files to the docs directory
         run: |
           cp avd_inventory/documentation/fabric/AVD_FABRIC-documentation.md docs/
+          cp avd_inventory/documentation/devices/*.md docs/
           cp avd_inventory/reports/AVD_FABRIC-state.md docs/
 
       - name: Build MkDocs Site

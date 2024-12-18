@@ -100,3 +100,9 @@ nav:
   - Home:
       - AVD Fabric Documentation: AVD_FABRIC-documentation.md
       - ANTA Test Report: AVD_FABRIC-state.md
+      - l01 docs: l01.md
+      - l02 docs: l02.md
+      - l03 docs: l03.md
+      - l04 docs: l04.md
+      - s01 docs: s01.md
+      - s02 docs: s02.md
