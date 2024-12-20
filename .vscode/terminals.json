@@ -1,0 +1,35 @@
+{
+    "autorun": true,
+    "autokill": true,
+    "terminals": [
+        {
+            "name": "l01",
+            "description": "l01, Leaf",
+            "icon": "code",
+            "color": "terminal.ansiBlue",
+            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it l01 Cli -p 15 2> /dev/null; do sleep 5; done",
+            "recycle": false,
+            "open": true,
+            "focus": true
+        },
+        {
+            "name": "l02",
+            "description": "l02, Leaf",
+            "icon": "heart",
+            "color": "terminal.ansiRed",
+            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it l02 Cli -p 15 2> /dev/null; do sleep 5; done",
+            "recycle": false,
+            "open": true,
+            "split": "l01"
+        },
+        {
+            "name": "h01",
+            "description": "h01, h01",
+            "icon": "git-merge",
+            "color": "terminal.ansiGreen",
+            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it h01 Cli -p 15 2> /dev/null; do sleep 5; done",
+            "recycle": false,
+            "open": true
+        }
+    ]
+}
