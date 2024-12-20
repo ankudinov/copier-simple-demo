@@ -39,4 +39,6 @@ fi
 # check if image is still missing and print a warning
 if [ -z "$(${CONTAINER_ENGINE} image ls | grep "arista/ceos")" ]; then
     echo "WARNING: cEOS-lab image download failed. Try to upload and import it manually."
+else
+    make start
 fi

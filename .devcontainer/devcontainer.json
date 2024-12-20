@@ -23,5 +23,13 @@
     "onCreateCommand": "chmod +x /workspaces/copier-simple-demo/addAliases.sh; /workspaces/copier-simple-demo/addAliases.sh",
     // "postCreateCommand": "postCreate.sh; make start",
     "postCreateCommand": "/workspaces/copier-simple-demo/postCreate.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "fabiospampinato.vscode-terminals",
+                "mutantdino.resourcemonitor"
+            ]
+        }
+    },
     "containerUser": "avd"
 }

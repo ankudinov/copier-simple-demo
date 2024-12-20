@@ -14,42 +14,106 @@ topology:
     defaults:
         kind: ceos
     nodes:
+
+        graphite:
+            kind: linux
+            image: netreplica/graphite
+            env:
+                HOST_CONNECTION: ${SSH_CONNECTION}
+            binds:
+                - __clabDir__/topology-data.json:/htdocs/default/default.json:ro
+                - __clabDir__/ansible-inventory.yml:/htdocs/lab/default/ansible-inventory.yml:ro
+            ports:
+                - 8080:80
+            exec:
+                - sh -c 'graphite_motd.sh 8080'
+            labels:
+                graph-hide: yes
+
         s01:
             mgmt-ipv4: 10.0.1.1
             binds:
             - sn/s01.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/s01.cfg
+            labels:
+                graph-level: 1
+                graph-icon: switch
+                group: DC
+                role: spine
+                vendor: Arista Networks
         s02:
             mgmt-ipv4: 10.0.1.2
             binds:
             - sn/s02.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/s02.cfg
+            labels:
+                graph-level: 1
+                graph-icon: switch
+                group: DC
+                role: spine
+                vendor: Arista Networks
         l01:
             mgmt-ipv4: 10.0.2.1
             binds:
             - sn/l01.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/l01.cfg
+            labels:
+                graph-level: 2
+                graph-icon: switch
+                group: DC
+                role: leaf
+                vendor: Arista Networks
         l02:
             mgmt-ipv4: 10.0.2.2
             binds:
             - sn/l02.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/l02.cfg
+            labels:
+                graph-level: 2
+                graph-icon: switch
+                group: DC
+                role: leaf
+                vendor: Arista Networks
         l03:
             mgmt-ipv4: 10.0.2.3
             binds:
             - sn/l03.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/l03.cfg
+            labels:
+                graph-level: 2
+                graph-icon: switch
+                group: DC
+                role: leaf
+                vendor: Arista Networks
         l04:
             mgmt-ipv4: 10.0.2.4
             binds:
             - sn/l04.txt:/mnt/flash/ceos-config:ro
             startup-config: init-configs/l04.cfg
+            labels:
+                graph-level: 2
+                graph-icon: switch
+                group: DC
+                role: leaf
+                vendor: Arista Networks
         h01:
             mgmt-ipv4: 10.0.3.1
             startup-config: init-configs/h01.cfg
+            labels:
+                graph-level: 3
+                graph-icon: server
+                group: DC
+                role: host
+                vendor: Arista Networks
         h02:
             mgmt-ipv4: 10.0.3.2
             startup-config: init-configs/h02.cfg
+            labels:
+                graph-level: 3
+                graph-icon: server
+                group: DC
+                role: host
+                vendor: Arista Networks
 
     links:
     - endpoints: ["l01:eth1", "s01:eth1"]
