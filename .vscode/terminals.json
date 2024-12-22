@@ -7,7 +7,7 @@
             "description": "l01, Leaf",
             "icon": "code",
             "color": "terminal.ansiBlue",
-            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it l01 bash -c \"Cli -p 15 2> /dev/null\" 2> /dev/null; do sleep 5; done",
+            "command": "./terminals.sh l01",
             "recycle": false,
             "open": true,
             "focus": true
@@ -17,7 +17,7 @@
             "description": "l02, Leaf",
             "icon": "heart",
             "color": "terminal.ansiRed",
-            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it l02 bash -c \"Cli -p 15 2> /dev/null\" 2> /dev/null; do sleep 5; done",
+            "command": "./terminals.sh l02",
             "recycle": false,
             "open": true,
             "split": "l01"
@@ -27,7 +27,7 @@
             "description": "h01, h01",
             "icon": "git-merge",
             "color": "terminal.ansiGreen",
-            "command": "clear; echo 'Waiting for the lab to start...'; until docker exec -it h01 bash -c \"Cli -p 15 2> /dev/null\" 2> /dev/null; do sleep 10; done",
+            "command": "./terminals.sh h01",
             "recycle": false,
             "open": true
         }
