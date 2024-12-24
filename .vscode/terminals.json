@@ -2,7 +2,10 @@
     "autorun": true,
     "autokill": true,
     "env": {
-        "TERMINAL_READY_MESSAGE": "Please check the README.md and the lab documentation before using the lab."
+        "TERMINAL_READY_MESSAGE": "Please check the README.md and the lab documentation before using the lab.",
+        "TERMINAL_SHELL": "bash",
+        "TERMINAL_STATUS_COMMAND": "Cli -p 15 -c 'show version'",
+        "TERMINAL_READY_COMMAND": "Cli -p 15"
     },
     "terminals": [
         {
