@@ -1,6 +1,9 @@
 {
     "autorun": true,
     "autokill": true,
+    "env": {
+        "TERMINAL_READY_MESSAGE": "Please check the README.md and the lab documentation before using the lab."
+    },
     "terminals": [
         {
             "name": "l01",

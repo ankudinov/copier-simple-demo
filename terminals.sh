@@ -7,5 +7,8 @@ until docker exec -it $1 bash -c "Cli -p 15 -c 'show version' 2> /dev/null" >/de
 done
 clear
 echo "$1 is ready."
-echo "Please check the README.md and the lab documentation before using the lab."
+# print additional instructions for the user if env var is set
+if [ "${TERMINAL_READY_MESSAGE}" ]; then
+    echo ${TERMINAL_READY_MESSAGE}
+fi
 docker exec -it $1 Cli -p 15
