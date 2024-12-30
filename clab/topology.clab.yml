@@ -15,20 +15,28 @@ topology:
         kind: ceos
     nodes:
 
-        graphite:
+        webssh:
             kind: linux
-            image: netreplica/graphite
-            env:
-                HOST_CONNECTION: ${SSH_CONNECTION}
-            binds:
-                - __clabDir__/topology-data.json:/htdocs/default/default.json:ro
-                - __clabDir__/ansible-inventory.yml:/htdocs/lab/default/ansible-inventory.yml:ro
+            image: billchurch/webssh2
+            # env:
+            #     PORT: 2233
             ports:
-                - 8080:80
-            exec:
-                - sh -c 'graphite_motd.sh 8080'
-            labels:
-                graph-hide: yes
+                - 2233:2222
+
+        # graphite:
+        #     kind: linux
+        #     image: netreplica/graphite
+        #     env:
+        #         HOST_CONNECTION: ${SSH_CONNECTION}
+        #     binds:
+        #         - __clabDir__/topology-data.json:/htdocs/default/default.json:ro
+        #         - __clabDir__/ansible-inventory.yml:/htdocs/lab/default/ansible-inventory.yml:ro
+        #     ports:
+        #         - 8080:80
+        #     exec:
+        #         - sh -c 'graphite_motd.sh 8080'
+        #     labels:
+        #         graph-hide: yes
 
         s01:
             mgmt-ipv4: 10.0.1.1
