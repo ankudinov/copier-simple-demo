@@ -16,6 +16,8 @@ Last reviewed: 17/12/2024
 
 ## Lab Inventory
 
+![test](small-l3ls-mlag.svg)
+
 This lab has following devices:
 
 | Hostname | Type | OS | Management Address | Login | Password |
